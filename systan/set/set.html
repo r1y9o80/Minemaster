@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>シスタン-クイズ-設定</title>
+        <link rel="stylesheet" href="../styles.css">
+        <link rel="stylesheet" href="../reset.css">
+        <script src="set.js" defer></script>
+    </head>
+    <body>
+        <h1 class="set_h1">問題番号を設定</h1>
+    </div>
+        <div class="inputs">
+            <div class="s">
+                <label for="s" style="font-size:20px;">スタート番号を入力</label>
+                <input type="text" id="s" name="s" minlength="1" maxlength="3" size="20" style="height: 150%;">
+            </div>
+            <div class="f">
+                <label for="f" style="font-size:20px;">最終番号を入力</label>
+                <input type="text" id="f" name="f" minlength="1" maxlength="3" size="20" style="height: 150%;">   
+            </div> 
+        </div>
+        <h2 style="font-size: 35px; margin-bottom: 0;">学習状況</h2>
+        <div class="table_button">
+            <table border="1" style="width: 98vw; height: 35vh; margin-left: 1vw;">
+                <tr>
+                    <td>番号</td><th>1~300</th><th>301~600</th><th>601~900</th><th>901~1200</th><th>1201~1500</th><th>1501~1800</th>
+                </tr>
+                <tr>
+                    <td>習得済み</td><th>0</th><th>0</th><th>0</th><th>0</th><th>0</th><th>0</th>
+                </tr>
+                <tr>
+                    <td>確認中</td><th>0</th><th>0</th><th>0</th><th>0</th><th>0</th><th>0</th>
+                </tr>
+                <tr>
+                    <td>未収得</td><th>0</th><th>0</th><th>0</th><th>0</th><th>0</th><th>0</th>
+                </tr>
+            </table>
+            <button type="button" onClick="to_kuizu('../kuizu/kuizu.html')">"スタート!!"</button>
+            <p id="check_p" style="color: red; font-size: clamp(0.875rem, 0.739rem + 0.68vw, 1.25rem);"></p>
+        </div>
+    </body>
+</html>
