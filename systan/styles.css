@@ -1,41 +1,175 @@
-let result = JSON.parse(localStorage.getItem('Result'));
-const table = document.getElementById("questions");
+@charset "UTF-8";
 
 
-result.sort((x, y) => x[0] - y[0]); // 最初の要素で比較してソート
+.start_back{
+    display: flex;
+    margin: 0;
+    background-color: darkgreen;
+    width: 100vw;
+    height: 100vh;
+    align-items: center;
+    justify-content: center;
+}
 
-console.log(result)
+.start_back .ele{
+    display: block;
+    text-align: center;
+    /*background-color: blueviolet;*/
+}
 
-fetch('../../data.json')
-    .then(response => {
-        if (!response.ok) {
-            throw new Error(`HTTP error! status: ${response.status}`);
-        }
-        return response.json();
-    })
-    .then(data => {
-        for (let i = 0; i < result.length; i++) { 
-            const tr = document.createElement("tr");
-            for (let g = 0; g < 4; g++) {
-                const td = document.createElement("td");
-                if (g === 0) {
-                    td.textContent = result[i][0]; // resultの要素を表示
-                } 
-                if (g === 1) {
-                    td.textContent = data[result[i][0]] && data[result[i][0]][0] ? String(data[result[i][0]][0]) : "データなし"; // データ存在確認
-                } 
-                if (g === 2) {
-                    td.textContent = data[result[i][0]] && data[result[i][0]][1] ? String(data[result[i][0]][1]) : "データなし"; // データ存在確認
-                } 
-                if (g === 3) {
-                    // "0"の場合は "〇"、"1" の場合は "ｘ"
-                    td.textContent = result[i][1] === 0 ? "〇" : "ｘ";
-                }
-                tr.appendChild(td);
-            }
-            table.appendChild(tr);
-        }
-    })
-    .catch(error => {
-        console.log("データの取得に失敗しました:", error);  // エラーメッセージを表示
-    });
+.start_back h1{
+    white-space: nowrap;
+    width: 100%;
+    display: block;
+    margin: 0;
+    /*background-color: aqua;*/
+    font-size: clamp(2rem, 0.682rem + 6.59vw, 5.625rem);
+}
+
+.start_back h3{
+    display: block;
+    margin: 0;
+    /*background-color: aquamarine;*/
+    font-size: clamp(1.875rem, 1.42rem + 2.27vw, 3.125rem);
+}
+
+.start_back p{
+    margin-top: 10px;
+    font-size: clamp(1.25rem, 1.023rem + 1.14vw, 1.875rem);
+    color: red;
+}
+
+#refer{
+    display: inline-block;
+    font-size:clamp(1.125rem, 0.625rem + 2.5vw, 2.5rem);
+    color:gold;
+}
+
+.set_h1{
+    font-size: clamp(2.313rem, 1.79rem + 2.61vw, 3.75rem);
+}
+
+.f,.s{
+    margin-top: 10px;
+    white-space: nowrap;
+    margin-right: 70vw;
+}
+
+.inputs{
+    text-align: right;
+}
+
+.table_button{
+    display: block;
+    text-align: center;
+}
+
+.table_button table{
+    font-size: clamp(0.5rem, 2.5vw, 1.875rem);
+}
+
+
+.table_button button{
+    width: 250px;
+    height: 70px;
+    text-align: center;
+    margin-top: 25px;
+    background-color:darkgrey;
+    border: 0;
+    border-radius: 5px;
+    padding: 2px;
+    font-size: 30px;
+    white-space: nowrap;
+    
+}
+
+.row{
+    height:13vh;
+    position: relative;
+    font-size: clamp(1.125rem, 0.852rem + 1.36vw, 1.875rem);
+    margin: 0;
+    text-align: center;
+}
+
+.word_1{
+    display: inline-block;
+    position: absolute;
+    margin: 0;
+    transform: translate(-50%,-50%);
+    top: 50%;
+    left: 50%;
+}
+
+.word_2{
+    display: inline-block;
+    position: absolute;
+    margin: 0;
+    transform: translate(-100%,-50%);
+    top: 50%;
+    left: clamp(18.438rem, 0.142rem + 91.48vw, 68.75rem);
+}
+
+.buttons{
+    text-align: center;
+}
+
+
+.buttons button{
+    margin-left: 10vw;
+    font-size: 25px;
+    text-align: left;
+    color: black;
+    border: 1px solid black;
+    display: block;
+    width: 80vw;
+    height: 7vh;
+    margin-bottom: 4vh;
+    border-radius: 5px;
+}
+
+#True_False {
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    top: 40%;
+    left: 50%;
+    font-size: 300px;
+    z-index: 100; /* 他の要素よりも上に表示させる */
+}
+
+.fin{
+    text-align: center;
+}
+
+.fin button{
+    width: 35vw;
+    margin-top: 7vw;
+    font-size: clamp(0.938rem, 0.597rem + 1.7vw, 1.875rem);
+    margin: 5vw;
+}
+
+.fin h1{
+    font-size: 60px;
+    display: block;
+    text-align: center;
+}
+
+.fin a{
+    display: block;
+    text-align: center;
+    font-size: 30px;
+    margin-top: 20px;
+}
+
+
+#questions{
+    margin-left: 4vw;
+    width: 92vw;
+    font-size: 30px;
+}
+
+#questions td{
+    width: 20vw;
+    height: 6vh;
+}
