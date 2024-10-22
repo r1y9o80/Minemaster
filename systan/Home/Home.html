@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>シスタン-クイズホーム</title>
+        <link rel="stylesheet" href="../styles.css">
+        <link rel="stylesheet" href="../reset.css">
+        <script>
+            let click=0
+
+            const to_refer = () => {
+                click =1
+            }
+            const to_set = (url) => {
+                if(click===0) window.location.href = url;
+                click = 0
+            }
+        </script>
+    </head>
+    <body>
+        <div class="start_back" onClick="to_set('../set/set.html')">
+            <div class="ele">
+                <h1>目指せシス単マスター</h1>
+                <h3>～効率よく学ぼう～</h3>
+                <p>＊画面クリックで開始</p>
+                <a id="refer" onClick="to_refer()" href="https://ei5ch.net/textbooks/230" target="_blank">このサイトで使用しているデータの引用元<br>https://ei5ch.net/textbooks/230/</a>
+        </div>
+    </body>
+</html>
